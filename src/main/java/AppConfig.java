@@ -6,33 +6,19 @@ import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class AppConfig {
-    @Bean
-    public Transport getCar() {
-        return new Car("Hyundai");
-    }
-
-    @Bean
-    public Transport getBus() {
-        return new Bus("Volvo");
-    }
-
-    @Bean
-    public Transport getPickup() {
-        return new Pickup("Ford");
-    }
 
     @Bean(name = "driver")
     public Driver getDriver() {
-        return new Driver("Archibald", getCar());
+        return new Driver("Archibald", new Car("Hyundai"));
     }
 
     @Bean(name = "driverOfBus")
     public Driver getDriverOfBus() {
-        return new Driver("John", getBus());
+        return new Driver("John", new Bus("Volvo"));
     }
 
     @Bean(name = "driverOfPickup")
     public Driver getDriverOfPickup() {
-        return new Driver("Jane", getPickup());
+        return new Driver("Jane", new Pickup("Ford"));
     }
 }
