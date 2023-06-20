@@ -1,13 +1,13 @@
 package model;
 
 public abstract class Transport {
-    String model;
+    private String model;
 
     public Transport(String model) {
         this.model = model;
     }
 
-    String getModel() {
+    public String getModel() {
         return model;
     }
 
